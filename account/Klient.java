@@ -7,4 +7,12 @@ public class Klient {
     private String email;
     private String telefon;
 
+    private void Adres(){
+
+    }
+
+
+    public Klient() {
+        System.out.println("Konto klienta zostalo utworzone");
+    }
 }
