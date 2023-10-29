@@ -4,11 +4,13 @@ public class Adres {
     private String ulica;
     private String kod;
     private String miejscowosc;
+    private int numerDomu;
 
-    public Adres(String ulica, String kod, String miejscowosc) {
+    public Adres(String ulica, String kod, String miejscowosc, int numerDomu) {
         this.ulica = ulica;
         this.kod = kod;
         this.miejscowosc = miejscowosc;
+        this.numerDomu = numerDomu;
     }
 
     public String getUlica() {
@@ -22,7 +24,9 @@ public class Adres {
     public String getKod() {
         return kod;
     }
-
+    public int getNumerDomu() {
+        return numerDomu;
+    }
     public void setKod(String kod) {
         this.kod = kod;
     }
@@ -34,6 +38,9 @@ public class Adres {
     public void setMiejscowosc(String miejscowosc) {
         this.miejscowosc = miejscowosc;
     }
+    public void setNumerDomu(int numerDomu) {
+        this.numerDomu = numerDomu;
+    }
 
     @Override
     public String toString() {
@@ -41,6 +48,7 @@ public class Adres {
                 "ulica='" + ulica + '\'' +
                 ", kod='" + kod + '\'' +
                 ", miejscowosc='" + miejscowosc + '\'' +
+                ", numerDomu=" + numerDomu +
                 '}';
     }
 }
