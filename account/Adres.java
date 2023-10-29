@@ -1,24 +1,46 @@
 package com.milewskiarkadiuszmodul8.account;
 
 public class Adres {
-    public String adres;
+    private String ulica;
+    private String kod;
+    private String miejscowosc;
 
-    public Adres(String adres) {
-        this.adres = adres;
+    public Adres(String ulica, String kod, String miejscowosc) {
+        this.ulica = ulica;
+        this.kod = kod;
+        this.miejscowosc = miejscowosc;
     }
 
-    public String getAdres() {
-        return adres;
+    public String getUlica() {
+        return ulica;
     }
 
-    public void setAdres(String adres) {
-        this.adres = adres;
+    public void setUlica(String ulica) {
+        this.ulica = ulica;
+    }
+
+    public String getKod() {
+        return kod;
+    }
+
+    public void setKod(String kod) {
+        this.kod = kod;
+    }
+
+    public String getMiejscowosc() {
+        return miejscowosc;
+    }
+
+    public void setMiejscowosc(String miejscowosc) {
+        this.miejscowosc = miejscowosc;
     }
 
     @Override
     public String toString() {
         return "Adres{" +
-                "adres='" + adres + '\'' +
+                "ulica='" + ulica + '\'' +
+                ", kod='" + kod + '\'' +
+                ", miejscowosc='" + miejscowosc + '\'' +
                 '}';
     }
 }

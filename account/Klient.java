@@ -13,14 +13,13 @@ public class Klient {
 
     }
 
-    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon ) {
-        System.out.println("Drugi konstruktor dziala");
+    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, Adres adres) {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.rokUrodzienia = rokUrodzienia;
         this.email = email;
         this.telefon = telefon;
-
+        this.adres = adres;
     }
 
     public String getImie() {
