@@ -33,14 +33,16 @@ public class Main {
         Adres adres = new Adres("Malczewskiego", "00-113", "Warszawa", 14);
 
         Waluta walutaPln = Waluta.PLN;
-
+        Waluta walutaEur = Waluta.EUR;
+        Waluta walutaUsd = Waluta.USD;
 
         Klient klient = new Klient("Arkadiusz", "Milewski", 1990,
                 "asmilewski@eloelo.com", "+4899923323", adres, walutaPln );
         System.out.println(klient);
 
-
+// below just a checker if the program gather data if the klient has polish currency.
         System.out.println(walutaPln.hasPln());
-
+        System.out.println(walutaEur.hasPln());
+        System.out.println(walutaUsd.hasPln());
     }
 }
