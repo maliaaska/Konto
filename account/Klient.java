@@ -9,17 +9,16 @@ public class Klient {
 
     private Adres adres;
 
-    public Klient() {
+    Waluta pln = Waluta.PLN;
 
-    }
-
-    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, Adres adres) {
+    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, Adres adres, Waluta pln) {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.rokUrodzienia = rokUrodzienia;
         this.email = email;
         this.telefon = telefon;
         this.adres = adres;
+        this.pln = pln;
     }
 
     public String getImie() {
@@ -28,46 +27,6 @@ public class Klient {
 
     public void setImie(String imie) {
         this.imie = imie;
-    }
-
-    public String getNazwisko() {
-        return nazwisko;
-    }
-
-    public void setNazwisko(String nazwisko) {
-        this.nazwisko = nazwisko;
-    }
-
-    public int getRokUrodzienia() {
-        return rokUrodzienia;
-    }
-
-    public void setRokUrodzienia(int rokUrodzienia) {
-        this.rokUrodzienia = rokUrodzienia;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefon() {
-        return telefon;
-    }
-
-    public void setTelefon(String telefon) {
-        this.telefon = telefon;
-    }
-
-    public Adres getAdres() {
-        return adres;
-    }
-
-    public void setAdres(Adres adres) {
-        this.adres = adres;
     }
 
     @Override
@@ -79,6 +38,7 @@ public class Klient {
                 ", email='" + email + '\'' +
                 ", telefon='" + telefon + '\'' +
                 ", adres=" + adres +
+                ", pln=" + pln +
                 '}';
     }
 }

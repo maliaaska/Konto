@@ -21,18 +21,26 @@ public class Main {
         System.out.println("Podaj ile chcesz wpłacić środków?");
         double kwota = scanner.nextDouble();
         konto.setWplacSrodki(kwota);
-//        11111 // Dlaczego w tym przypadku nie pobiera zauktualizowanego stanu konta?
+
         System.out.println(konto.getAccountBalance());
 
         System.out.println("Napisz ile chciałbyś wypłacić pieniędzy.");
         kwota = scanner.nextDouble();
         konto.setWyplacSrodki(kwota);
-        // Konstruktor
+
+
+
         Adres adres = new Adres("Malczewskiego", "00-113", "Warszawa", 14);
 
+        Waluta pln = Waluta.PLN;
+
+
         Klient klient = new Klient("Arkadiusz", "Milewski", 1990,
-                "asmilewski@eloelo.com", "+4899923323", adres);
+                "asmilewski@eloelo.com", "+4899923323", adres, pln );
         System.out.println(klient);
+
+        Waluta waluta = Waluta.PLN;
+        System.out.println(waluta.hasPln());
 
     }
 }

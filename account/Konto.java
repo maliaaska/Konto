@@ -18,6 +18,8 @@ public class Konto {
         return numer;
     }
 
+
+
     public void setWplacSrodki(double kwota) {
         this.stanKonta = stanKonta + kwota;
 ///// dlaczego ta metoda nie dziala przy przypisuwaniu jej do nowego double (patrz klasa Konto)
