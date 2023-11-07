@@ -41,8 +41,8 @@ public class Main {
         System.out.println(klient);
 
 // below just a checker if the program gather data if the klient has polish currency.
-        System.out.println(walutaPln.hasPln());
-        System.out.println(walutaEur.hasPln());
-        System.out.println(walutaUsd.hasPln());
+        System.out.println(walutaPln.hasCurrency());
+        System.out.println(walutaEur.hasCurrency());
+        System.out.println(walutaUsd.hasCurrency());
     }
 }

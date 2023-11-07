@@ -11,7 +11,7 @@ public enum Waluta {
         this.currency = currency;
     }
 
-    public boolean hasPln() {
+    public boolean hasCurrency() {
         return currency;
     }
 }
