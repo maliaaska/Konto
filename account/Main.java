@@ -32,15 +32,15 @@ public class Main {
 
         Adres adres = new Adres("Malczewskiego", "00-113", "Warszawa", 14);
 
-        Waluta pln = Waluta.PLN;
+        Waluta walutaPln = Waluta.PLN;
 
 
         Klient klient = new Klient("Arkadiusz", "Milewski", 1990,
-                "asmilewski@eloelo.com", "+4899923323", adres, pln );
+                "asmilewski@eloelo.com", "+4899923323", adres, walutaPln );
         System.out.println(klient);
 
-        Waluta waluta = Waluta.PLN;
-        System.out.println(waluta.hasPln());
+
+        System.out.println(walutaPln.hasPln());
 
     }
 }

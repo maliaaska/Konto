@@ -19,6 +19,7 @@ public class Klient {
         this.telefon = telefon;
         this.adres = adres;
         this.pln = pln;
+
     }
 
     public String getImie() {
