@@ -4,8 +4,6 @@ public class Konto {
     private double stanKonta = 1223.86;
     private final boolean debet = false;
 
-
-
     public double getAccountBalance() {
           return stanKonta;
     }
@@ -27,14 +25,14 @@ public class Konto {
 
     public void setWyplacSrodki(double kwota) {
         if (debet) {
-            this.stanKonta = stanKonta + kwota;
-            System.out.println(" Twój obecny stan konta po wyplacie to " + kwota);
-        } else if ( kwota > this.stanKonta){
+            double stanKonta = this.stanKonta - kwota;
+            System.out.println(" Twój obecny stan konta po walce wyplacie to " + stanKonta);
+        } else if ( kwota > stanKonta){
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
-            this.stanKonta = stanKonta - kwota;
-            System.out.println(" Twój obecny stan konta po wyplacie to " + kwota);
+            double stanKonta = this.stanKonta - kwota;
+            System.out.println(" Twój obecny stan konta po  to " + stanKonta);
         }
-
+        System.out.println("a new command");
     }
 }

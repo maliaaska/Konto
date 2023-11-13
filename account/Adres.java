@@ -42,13 +42,13 @@ public class Adres {
         this.numerDomu = numerDomu;
     }
 
-    @Override
-    public String toString() {
-        return "Adres{" +
-                "ulica='" + ulica + '\'' +
-                ", kod='" + kod + '\'' +
-                ", miejscowosc='" + miejscowosc + '\'' +
-                ", numerDomu=" + numerDomu +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Adres{" +
+//                "ulica='" + ulica + '\'' +
+//                ", kod='" + kod + '\'' +
+//                ", miejscowosc='" + miejscowosc + '\'' +
+//                ", numerDomu=" + numerDomu +
+//                '}';
+//    }
 }
