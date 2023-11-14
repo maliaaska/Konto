@@ -32,30 +32,27 @@ public class Main {
             double kwota = scanner.nextDouble();
             konto.setWplacSrodki(kwota);
             System.out.println("Twoje Środki po wpłaceniu to: " + konto.getAccountBalance() + " " + walutaPln);
+        } else if ( Waluta.valueOf(waluta) != walutaPln ) {
+            System.out.println("Niestety nie posiadasz konta o takiej walucie. Przyjdź do placówki aby utworzyć takie konto.");
         }
 
 
 
+        System.out.println("Napisz ile chciałbyś wypłacić pieniędzy.");
+        double wyplata = scanner.nextDouble();
+        konto.setWyplacSrodki(wyplata);
 
 
 
-//        System.out.println(konto.getAccountBalance());
-//
-//        System.out.println("Napisz ile chciałbyś wypłacić pieniędzy.");
-//        double wyplata = scanner.nextDouble();
-//        konto.setWyplacSrodki(wyplata);
-//
-//
-//
-//        Adres adres = new Adres("Malczewskiego", "00-113", "Warszawa", 14);
-//
-//
-//
-//        Klient klient = new Klient("Arkadiusz", "Milewski", 1990,
-//                "asmilewski@eloelo.com", "+4899923323", adres, walutaPln );
-//        System.out.println(klient);
-//
-//// below just a checker if the program gather data if the klient has polish currency.
+        Adres adres = new Adres("Malczewskiego", "00-113", "Warszawa", 14);
+
+
+
+        Klient klient = new Klient("Arkadiusz", "Milewski", 1990,
+                "asmilewski@eloelo.com", "+4899923323", adres, walutaPln );
+        System.out.println(klient);
+
+// below just a checker if the program gather data if the klient has polish currency.
 //        System.out.println(walutaPln.hasCurrency());
 //        System.out.println(walutaEur.hasCurrency());
 //        System.out.println(walutaUsd.hasCurrency());

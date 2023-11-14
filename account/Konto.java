@@ -1,6 +1,7 @@
 package com.milewskiarkadiuszmodul8.account;
 
 public class Konto {
+
     private double stanKonta = 1223.86;
     private final boolean debet = false;
 
@@ -24,7 +25,6 @@ public class Konto {
     }
 
 
-
     public void setWyplacSrodki(double kwota) {
         if (debet) {
             double stanKonta = this.stanKonta - kwota;
@@ -33,8 +33,7 @@ public class Konto {
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
             double stanKonta = this.stanKonta - kwota;
-            System.out.println(" Twój obecny stan konta po  to " + stanKonta);
+            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKonta);
         }
-        System.out.println("a new command");
     }
 }
