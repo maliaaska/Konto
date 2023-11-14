@@ -23,6 +23,8 @@ public class Konto {
 ///// dlaczego ta metoda nie dziala przy przypisuwaniu jej do nowego double (patrz klasa Konto)
     }
 
+
+
     public void setWyplacSrodki(double kwota) {
         if (debet) {
             double stanKonta = this.stanKonta - kwota;
