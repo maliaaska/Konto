@@ -11,11 +11,11 @@ public class Main {
         System.out.println("Wprowadź numer swojego konta skladajacego sie z 16-stu cyfr");
         String numerKonta = scanner.nextLine();
         konto.setNumerRachunku(numerKonta);
-//        double stanKonta = konto.getAccountBalance(); // dlaczego przypisanie do tej zmiennej nie dziala
-//        boolean debet = konto.isDebet();
-//
-//        System.out.println("Twoj numer rachunku to " + numerKonta + " i obecny stan konta to " + stanKonta);
-//        System.out.println("Konto posiada debet: " + debet);
+        double stanKonta = konto.getAccountBalance(); // dlaczego przypisanie do tej zmiennej nie dziala
+        boolean debet = konto.isDebet();
+
+        System.out.println("Twoj numer rachunku to " + numerKonta + " i obecny stan konta to " + stanKonta);
+        System.out.println("Konto posiada debet: " + debet);
 
         // Sprawdzanie czy uzytkownik posiada daną walutę
         Waluta walutaPln = Waluta.PLN;
