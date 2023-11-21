@@ -1,17 +1,10 @@
 package com.milewskiarkadiuszmodul8.account;
 
 public enum Waluta {
-    PLN(true),
-    EUR(false),
-    USD(false);
 
-    private boolean currency;
+    PLN,
+    EUR,
+    USD;
 
-    private Waluta(boolean currency) {
-        this.currency = currency;
-    }
-
-    public boolean hasCurrency() {
-        return currency;
-    }
 }
+

@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Konto {
 
     Klient klient = new Klient();
-
-    private double numerRachunku;
+    private String numerRachunku;
     private double stanKonta;
 
+    private int nrDomu;
     private boolean debet = false;
 
 
@@ -20,11 +20,12 @@ public class Konto {
 
     }
 
-    public Konto(double numerRachunku, double stanKonta, Klient klient, boolean debet) {
-        this.numerRachunku = numerRachunku;
-        this.stanKonta = stanKonta;
+    public Konto(String numerRachunku, double stanKonta, Klient klient, int nrDomu, boolean debet) {
+        this.numerRachunku = "2934 9994 0000 0001 3458 8557";
+        this.stanKonta = 850;
         this.klient = klient;
-        this.debet = debet;
+        this.nrDomu = 17;
+
 
     }
 
@@ -56,12 +57,16 @@ public class Konto {
         }
     }
 
-    public double getNumerRachunku() {
-        return numerRachunku;
+    public Klient getKlient() {
+        return klient;
     }
 
-    public void setNumerRachunku(double numerRachunku) {
-        this.numerRachunku = numerRachunku;
+    public void setKlient(Klient klient) {
+        this.klient = klient;
+    }
+
+    public String getNumerRachunku() {
+        return numerRachunku;
     }
 
     public double getStanKonta() {
@@ -72,25 +77,15 @@ public class Konto {
         this.stanKonta = stanKonta;
     }
 
-    public Klient getKlient() {
-        return klient;
+    public int getNrDomu() {
+        return nrDomu;
     }
 
-    public void setKlient(Klient klient) {
-        this.klient = klient;
+    public void setNrDomu(int nrDomu) {
+        this.nrDomu = nrDomu;
     }
 
     public void setDebet(boolean debet) {
         this.debet = debet;
-    }
-
-    @Override
-    public String toString() {
-        return "Konto{" +
-                "numerRachunku=" + numerRachunku +
-                ", stanKonta=" + stanKonta +
-                ", klient=" + klient +
-                ", debet=" + debet +
-                '}';
     }
 }
