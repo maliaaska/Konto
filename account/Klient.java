@@ -3,20 +3,21 @@ package com.milewskiarkadiuszmodul8.account;
 public class Klient {
 
 
-    private String imie = "Arkadiusz";
-    private String nazwisko = "Melika";
-    private int rokUrodzienia = 1996;
-    private String email = "arki@gmail.com";
-    private String telefon = "77723-234324-23423";
+    private String imie;
+    private String nazwisko ;
+    private int rokUrodzienia;
+    private String email;
+    private String telefon;
     Waluta pln = Waluta.PLN;
     Adres adres = new Adres();
 
     public Klient() {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.rokUrodzienia = rokUrodzienia;
-        this.email = email;
-        this.telefon = telefon;
+        this.imie = "Arkadiusz";
+        this.nazwisko = "Melika";
+        this.rokUrodzienia = 1996;
+        this.email = "arki@gmail.com";
+        this.telefon = "196-237-945";
+
     }
 
     public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, Adres adres, Waluta pln) {
@@ -70,20 +71,20 @@ public class Klient {
         this.telefon = telefon;
     }
 
-    public Adres getAdres() {
-        return adres;
-    }
-
-    public void setAdres(Adres adres) {
-        this.adres = adres;
-    }
-
     public Waluta getPln() {
         return pln;
     }
 
     public void setPln(Waluta pln) {
         this.pln = pln;
+    }
+
+    public Adres getAdres() {
+        return adres;
+    }
+
+    public void setAdres(Adres adres) {
+        this.adres = adres;
     }
 
     @Override
@@ -94,8 +95,8 @@ public class Klient {
                 ", rokUrodzienia=" + rokUrodzienia +
                 ", email='" + email + '\'' +
                 ", telefon='" + telefon + '\'' +
-                ", adres=" + adres +
                 ", pln=" + pln +
+                ", adres=" + adres +
                 '}';
     }
 }

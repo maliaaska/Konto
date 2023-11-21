@@ -6,8 +6,8 @@ public class Konto {
 
     Klient klient = new Klient();
 
-    private double numerRachunku = 12352830;
-    private double stanKonta = 1223.86;
+    private double numerRachunku;
+    private double stanKonta;
 
     private boolean debet = false;
 

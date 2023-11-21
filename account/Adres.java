@@ -1,22 +1,16 @@
 package com.milewskiarkadiuszmodul8.account;
 
 public class Adres {
-    private String ulica = "Malczewskiego";
-    private String kod = "02-354";
-    private String miejscowosc = "Warszawa";
-    private int numerDomu = 17;
+    private String ulica;
+    private String kod;
+    private String miejscowosc;
+    private int numerDomu;
 
     public Adres() {
-        this.ulica = ulica;
-        this.kod = kod;
-        this.miejscowosc = miejscowosc;
-        this.numerDomu = numerDomu;
-    }
-    public Adres(String ulica, String kod, String miejscowosc, int numerDomu) {
-        this.ulica = ulica;
-        this.kod = kod;
-        this.miejscowosc = miejscowosc;
-        this.numerDomu = numerDomu;
+        this.ulica = "Malczewskiego";
+        this.kod = "00-123";
+        this.miejscowosc = "Warszawa";
+        this.numerDomu = 17;
     }
 
     public String getUlica() {
