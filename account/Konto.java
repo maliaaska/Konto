@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Konto {
 
     Klient klient = new Klient();
+
     private String numerRachunku;
     private double stanKonta;
 
@@ -28,7 +29,7 @@ public class Konto {
 
 
     }
-
+    Waluta walutaPln = Waluta.PLN;
     // Metody
     public double getAccountBalance() {
           return stanKonta;
@@ -48,12 +49,12 @@ public class Konto {
     public void setWyplacSrodki(double kwota) {
         if (debet) {
             double stanKonta = this.stanKonta - kwota;
-            System.out.println(" Twój obecny stan konta po walce wyplacie to " + stanKonta);
+            System.out.println(" Twój obecny stan konta po wpłacie to " + stanKonta);
         } else if ( kwota > stanKonta){
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
             double stanKonta = this.stanKonta - kwota;
-            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKonta);
+            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKonta + " " + walutaPln);
         }
     }
 
@@ -87,5 +88,16 @@ public class Konto {
 
     public void setDebet(boolean debet) {
         this.debet = debet;
+    }
+
+    @Override
+    public String toString() {
+        return "Konto{" +
+                "klient=" + klient +
+                ", numerRachunku='" + numerRachunku + '\'' +
+                ", stanKonta=" + stanKonta +
+                ", nrDomu=" + nrDomu +
+                ", debet=" + debet +
+                '}';
     }
 }

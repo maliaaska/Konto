@@ -29,7 +29,7 @@ public class Main {
 
 
         if ( walutaPln == Waluta.valueOf(waluta)){
-            System.out.println("Podaj ile chcesz wpłacić środków ziomblu?");
+            System.out.println("Podaj ile chcesz wpłacić środków?");
             double kwota = scanner.nextDouble();
             konto.setWplacSrodki(kwota);
             System.out.println("Twoje Środki po wpłaceniu to: " + konto.getAccountBalance() + " " + walutaPln);
