@@ -8,8 +8,8 @@ public class Klient {
     private int rokUrodzienia;
     private String email;
     private String telefon;
-    Waluta pln = Waluta.PLN;
-    Adres adres = new Adres();
+    private Waluta pln = Waluta.PLN;
+    private Adres adres = new Adres();
 
     public Klient() {
         this.imie = "Arkadiusz";

@@ -10,22 +10,21 @@ public class Konto {
     private double stanKonta;
 
     private int nrDomu;
-    private boolean debet = false;
+    private boolean debet = true;
 
 
     public Konto () {
-        this.numerRachunku = numerRachunku;
-        this.stanKonta = stanKonta;
-        this.klient = klient;
-        this.debet = debet;
+        this.numerRachunku = "2934 9994 0000 0001 3458 8557";
+        this.stanKonta = 850;
+        this.debet = true;
 
     }
 
-    public Konto(String numerRachunku, double stanKonta, Klient klient, int nrDomu, boolean debet) {
-        this.numerRachunku = "2934 9994 0000 0001 3458 8557";
-        this.stanKonta = 850;
-        this.klient = klient;
-        this.nrDomu = 17;
+    public Konto(String numerRachunku, double stanKonta,int nrDomu, boolean debet) {
+        this.numerRachunku = numerRachunku;
+        this.stanKonta = stanKonta;
+        this.nrDomu = nrDomu;
+        this.debet = debet;
 
 
     }
