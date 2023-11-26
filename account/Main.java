@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Konto konto = new Konto();
-        Klient klient = new Klient();
+        Klient klient = new Klient("Arek", "Milewski", 1998, "arek@gmail.com","176-508-234");
+        Adres adres = new Adres("Malczewskiego", "00-113", "Warszawa", 17);
+        Konto konto = new Konto("1949 0004 1231231 1223", 850, true,  klient, adres );
+
 
         System.out.println("Wprowadź numer swojego konta skladajacego sie z 16-stu cyfr");
         String nrKonta = konto.getNumerRachunku();
@@ -42,8 +44,8 @@ public class Main {
         double wyplata = scanner.nextDouble();
         konto.setWyplacSrodki(wyplata);
 
-        System.out.println(konto.toString());
-        System.out.println(klient);
+        System.out.println(konto);
+
 
 // below just a checker if the program gather data if the klient has polish currency.
 //        System.out.println(walutaPln.hasCurrency());

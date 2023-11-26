@@ -1,32 +1,25 @@
 package com.milewskiarkadiuszmodul8.account;
 
-import java.util.Scanner;
-
 public class Konto {
 
-    Klient klient = new Klient();
 
     private String numerRachunku;
     private double stanKonta;
-
-    private int nrDomu;
-    private boolean debet = true;
+    private boolean debet;
 
 
-    public Konto () {
-        this.numerRachunku = "2934 9994 0000 0001 3458 8557";
-        this.stanKonta = 850;
-        this.debet = true;
+
+    public Konto (String s) {
+        this.numerRachunku = numerRachunku;
+        this.stanKonta = stanKonta;
+        this.debet = debet;
 
     }
 
-    public Konto(String numerRachunku, double stanKonta,int nrDomu, boolean debet) {
+    public Konto(String numerRachunku, double stanKonta, boolean debet, Klient klient, Adres adres) {
         this.numerRachunku = numerRachunku;
         this.stanKonta = stanKonta;
-        this.nrDomu = nrDomu;
         this.debet = debet;
-
-
     }
     Waluta walutaPln = Waluta.PLN;
     // Metody
@@ -57,14 +50,6 @@ public class Konto {
         }
     }
 
-    public Klient getKlient() {
-        return klient;
-    }
-
-    public void setKlient(Klient klient) {
-        this.klient = klient;
-    }
-
     public String getNumerRachunku() {
         return numerRachunku;
     }
@@ -77,26 +62,25 @@ public class Konto {
         this.stanKonta = stanKonta;
     }
 
-    public int getNrDomu() {
-        return nrDomu;
-    }
-
-    public void setNrDomu(int nrDomu) {
-        this.nrDomu = nrDomu;
-    }
-
     public void setDebet(boolean debet) {
         this.debet = debet;
+    }
+
+    public Waluta getWalutaPln() {
+        return walutaPln;
+    }
+
+    public void setWalutaPln(Waluta walutaPln) {
+        this.walutaPln = walutaPln;
     }
 
     @Override
     public String toString() {
         return "Konto{" +
-                "klient=" + klient +
-                ", numerRachunku='" + numerRachunku + '\'' +
+                "numerRachunku='" + numerRachunku + '\'' +
                 ", stanKonta=" + stanKonta +
-                ", nrDomu=" + nrDomu +
                 ", debet=" + debet +
+                ", walutaPln=" + walutaPln +
                 '}';
     }
 }

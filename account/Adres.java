@@ -6,11 +6,11 @@ public class Adres {
     private String miejscowosc;
     private int numerDomu;
 
-    public Adres() {
-        this.ulica = "Malczewskiego";
-        this.kod = "00-123";
-        this.miejscowosc = "Warszawa";
-        this.numerDomu = 17;
+    public Adres(String ulica, String kod, String miejscowosc, int numerDomu) {
+        this.ulica = ulica;
+        this.kod = kod;
+        this.miejscowosc = miejscowosc;
+        this.numerDomu = numerDomu;
     }
 
     public String getUlica() {

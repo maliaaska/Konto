@@ -9,18 +9,19 @@ public class Klient {
     private String email;
     private String telefon;
     private Waluta pln = Waluta.PLN;
-    private Adres adres = new Adres();
+    private Adres adres;
 
-    public Klient() {
-        this.imie = "Arkadiusz";
-        this.nazwisko = "Melika";
-        this.rokUrodzienia = 1996;
-        this.email = "arki@gmail.com";
-        this.telefon = "196-237-945";
+    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.rokUrodzienia = rokUrodzienia;
+        this.email = email;
+        this.telefon = telefon;
 
     }
 
     public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, Adres adres, Waluta pln) {
+
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.rokUrodzienia = rokUrodzienia;
