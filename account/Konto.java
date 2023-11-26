@@ -5,12 +5,16 @@ public class Konto {
     private String numerRachunku;
     private double stanKonta;
     private boolean debet;
+    private Klient klient;
+    private Adres adres;
 
 
     public Konto(String numerRachunku, double stanKonta, boolean debet, Klient klient, Adres adres) {
         this.numerRachunku = numerRachunku;
         this.stanKonta = stanKonta;
         this.debet = debet;
+        this.klient = klient;
+        this.adres = adres;
     }
     Waluta walutaPln = Waluta.PLN;
 
@@ -75,6 +79,8 @@ public class Konto {
                 "numerRachunku='" + numerRachunku + '\'' +
                 ", stanKonta=" + stanKonta +
                 ", debet=" + debet +
+                ", klient=" + klient +
+                ", adres=" + adres +
                 ", walutaPln=" + walutaPln +
                 '}';
     }
