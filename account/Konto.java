@@ -2,19 +2,10 @@ package com.milewskiarkadiuszmodul8.account;
 
 public class Konto {
 
-
     private String numerRachunku;
     private double stanKonta;
     private boolean debet;
 
-
-
-    public Konto (String s) {
-        this.numerRachunku = numerRachunku;
-        this.stanKonta = stanKonta;
-        this.debet = debet;
-
-    }
 
     public Konto(String numerRachunku, double stanKonta, boolean debet, Klient klient, Adres adres) {
         this.numerRachunku = numerRachunku;
@@ -22,6 +13,7 @@ public class Konto {
         this.debet = debet;
     }
     Waluta walutaPln = Waluta.PLN;
+
     // Metody
     public double getAccountBalance() {
           return stanKonta;
@@ -39,6 +31,9 @@ public class Konto {
     }
 
     public void setWyplacSrodki(double kwota) {
+
+        this.stanKonta = stanKonta - kwota;
+
         if (debet) {
             double stanKonta = this.stanKonta - kwota;
             System.out.println(" Twój obecny stan konta po wpłacie to " + stanKonta);

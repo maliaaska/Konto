@@ -9,8 +9,6 @@ public class Main {
         Adres adres = new Adres("Malczewskiego", "00-113", "Warszawa", 17);
         Konto konto = new Konto("1949 0004 1231231 1223", 850, true,  klient, adres );
 
-
-        System.out.println("Wprowadź numer swojego konta skladajacego sie z 16-stu cyfr");
         String nrKonta = konto.getNumerRachunku();
         double stanKonta = konto.getAccountBalance(); // dlaczego przypisanie do tej zmiennej nie dziala
         boolean debet = konto.isDebet();
@@ -20,8 +18,7 @@ public class Main {
 
         // Sprawdzanie czy uzytkownik posiada daną walutę
         Waluta walutaPln = Waluta.PLN;
-//        Waluta walutaEur = Waluta.EUR;
-//        Waluta walutaUsd = Waluta.USD;
+
 
 
         System.out.println("Podaj w jakiej walucie chcesz dokonać wpłaty? Podaj jeden z przykładów: PLN, EUR, USD"  );
