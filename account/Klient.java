@@ -11,23 +11,24 @@ public class Klient {
     private Waluta pln = Waluta.PLN;
     private Adres adres;
 
-    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.rokUrodzienia = rokUrodzienia;
-        this.email = email;
-        this.telefon = telefon;
-
-    }
-
-    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, Adres adres, Waluta pln) {
-
+    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, Adres adres) {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.rokUrodzienia = rokUrodzienia;
         this.email = email;
         this.telefon = telefon;
         this.adres = adres;
+
+    }
+
+    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, String ulica, String kod, String miejscowosc, int nrDomu , Waluta pln) {
+
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.rokUrodzienia = rokUrodzienia;
+        this.email = email;
+        this.telefon = telefon;
+        this.adres = new Adres(ulica, kod, miejscowosc, nrDomu);
         this.pln = pln;
 
     }

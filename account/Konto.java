@@ -4,53 +4,48 @@ public class Konto {
 
     private String numerRachunku;
     private double stanKonta;
-    private boolean debet;
-    private Klient klient;
-    private Adres adres;
+    private Klient posiadacz;
 
+    private int nrDomu;
 
-    public Konto(String numerRachunku, double stanKonta, boolean debet, Klient klient, Adres adres) {
+    private Waluta waluta;
+
+    public Konto(String numerRachunku, double stanKonta, Klient posiadacz, int nrDomu, Waluta waluta) {
         this.numerRachunku = numerRachunku;
         this.stanKonta = stanKonta;
-        this.debet = debet;
-        this.klient = klient;
-        this.adres = adres;
+        this.posiadacz = posiadacz;
+        this.nrDomu = nrDomu;
+        this.waluta = waluta;
+
     }
-    Waluta walutaPln = Waluta.PLN;
 
     // Metody
     public double getAccountBalance() {
           return stanKonta;
     }
-    public boolean isDebet() {
-        return false;
-    }
-    public String setNumerRachunku(String numer) {
-        return numer;
-    }
 
     public void setWplacSrodki(double kwota) {
+
         this.stanKonta = stanKonta + kwota;
-///// dlaczego ta metoda nie dziala przy przypisuwaniu jej do nowego double (patrz klasa Konto)
     }
 
     public void setWyplacSrodki(double kwota) {
 
         this.stanKonta = stanKonta - kwota;
 
-        if (debet) {
-            double stanKonta = this.stanKonta - kwota;
-            System.out.println(" Twój obecny stan konta po wpłacie to " + stanKonta);
-        } else if ( kwota > stanKonta){
+        if ( kwota > stanKonta){
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
-            double stanKonta = this.stanKonta - kwota;
-            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKonta + " " + walutaPln);
+            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKonta + " " + Waluta.PLN);
         }
     }
 
     public String getNumerRachunku() {
         return numerRachunku;
+    }
+
+    public void setNumerRachunku(String numerRachunku) {
+        this.numerRachunku = numerRachunku;
     }
 
     public double getStanKonta() {
@@ -61,16 +56,28 @@ public class Konto {
         this.stanKonta = stanKonta;
     }
 
-    public void setDebet(boolean debet) {
-        this.debet = debet;
+    public Klient getPosiadacz() {
+        return posiadacz;
     }
 
-    public Waluta getWalutaPln() {
-        return walutaPln;
+    public void setPosiadacz(Klient posiadacz) {
+        this.posiadacz = posiadacz;
     }
 
-    public void setWalutaPln(Waluta walutaPln) {
-        this.walutaPln = walutaPln;
+    public int getNrDomu() {
+        return nrDomu;
+    }
+
+    public void setNrDomu(int nrDomu) {
+        this.nrDomu = nrDomu;
+    }
+
+    public Waluta getWaluta() {
+        return waluta;
+    }
+
+    public void setWaluta(Waluta waluta) {
+        this.waluta = waluta;
     }
 
     @Override
@@ -78,10 +85,9 @@ public class Konto {
         return "Konto{" +
                 "numerRachunku='" + numerRachunku + '\'' +
                 ", stanKonta=" + stanKonta +
-                ", debet=" + debet +
-                ", klient=" + klient +
-                ", adres=" + adres +
-                ", walutaPln=" + walutaPln +
+                ", posiadacz=" + posiadacz +
+                ", nrDomu=" + nrDomu +
+                ", waluta=" + waluta +
                 '}';
     }
 }
