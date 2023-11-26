@@ -22,17 +22,17 @@ public class Main {
 
 
         System.out.println("Podaj w jakiej walucie chcesz dokonać wpłaty? Podaj jeden z przykładów: PLN, EUR, USD"  );
-        String pln = scanner.nextLine();
+        String moneta = scanner.nextLine();
 
 
 
-        if ( walutaPln == Waluta.valueOf(pln)){
+        if ( walutaPln == Waluta.valueOf(moneta)){
             System.out.println("Podaj ile chcesz wpłacić środków?");
             double kwota = scanner.nextDouble();
             konto.setWplacSrodki(kwota);
-            System.out.println("Twoje Środki po wpłaceniu to: " + konto.getAccountBalance() + " " + walutaPln);
-        } else if ( Waluta.valueOf(pln) != walutaPln ) {
-            System.out.println("Niestety nie posiadasz konta o takiej walucie. Przyjdź do placówki aby utworzyć takie konto.");
+            System.out.println("Twoje Środki po wpłaceniu to: " + konto.getAccountBalance() + " " + moneta);
+        } else if ( Waluta.valueOf(moneta) != waluta.PLN ) {
+            System.out.println("Niestety nie posiadasz konta o takiej walucie. Przyjdź do placówki aby utworzyć takie konto. Teraz możesz wpłacić pieniądze w PLN");
         }
 
 
