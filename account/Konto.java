@@ -10,12 +10,17 @@ public class Konto {
 
     private Waluta waluta;
 
-    public Konto(String numerRachunku, double stanKonta, Klient posiadacz, int nrDomu, Waluta waluta) {
+    private double stanKontaUsd;
+    private double stanKontaEur;
+
+    public Konto(String numerRachunku, double stanKonta, Klient posiadacz, int nrDomu, Waluta waluta, double stanKontaUSD, double stanKontaEUR) {
         this.numerRachunku = numerRachunku;
         this.stanKonta = stanKonta;
         this.posiadacz = posiadacz;
         this.nrDomu = nrDomu;
         this.waluta = waluta;
+        this.stanKontaUsd = stanKontaUsd;
+        this.stanKontaEur = stanKontaEur;
 
     }
 
@@ -23,13 +28,32 @@ public class Konto {
     public double getAccountBalance() {
           return stanKonta;
     }
-
+    public double getAccountBalanceUsd() { return stanKontaUsd;}
     public void setWplacSrodki(double kwota) {
 
         this.stanKonta = stanKonta + kwota;
     }
 
+    public void setWplacSrodkiUsd ( double kwota ) {
+        this.stanKontaUsd = stanKontaUsd + kwota;
+    }
+
+    public void setWplacSrodkiEur ( double kwota ) {
+        this.stanKontaEur = stanKontaEur + kwota;
+    }
+
     public void setWyplacSrodki(double kwota) {
+
+        this.stanKontaUsd = stanKontaUsd - kwota;
+
+        if ( kwota > stanKontaUsd){
+            System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
+        } else {
+            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKontaUsd + " " + Waluta.USD);
+        }
+    }
+
+    public void setWyplacSrodkiUsd(double kwota) {
 
         this.stanKonta = stanKonta - kwota;
 
@@ -80,6 +104,22 @@ public class Konto {
         this.waluta = waluta;
     }
 
+    public double getStanKontaUsd() {
+        return stanKontaUsd;
+    }
+
+    public void setStanKontaUsd(double stanKontaUsd) {
+        this.stanKontaUsd = stanKontaUsd;
+    }
+
+    public double getStanKontaEur() {
+        return stanKontaEur;
+    }
+
+    public void setStanKontaEur(double stanKontaEur) {
+        this.stanKontaEur = stanKontaEur;
+    }
+
     @Override
     public String toString() {
         return "Konto{" +
@@ -88,6 +128,8 @@ public class Konto {
                 ", posiadacz=" + posiadacz +
                 ", nrDomu=" + nrDomu +
                 ", waluta=" + waluta +
+                ", stanKontaUsd=" + stanKontaUsd +
+                ", stanKontaEur=" + stanKontaEur +
                 '}';
     }
 }
