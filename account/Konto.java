@@ -78,6 +78,10 @@ public class Konto {
         return numerRachunku;
     }
 
+
+    // GETTERS AND SETTERS
+
+
     public void setNumerRachunku(String numerRachunku) {
         this.numerRachunku = numerRachunku;
     }

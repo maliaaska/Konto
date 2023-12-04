@@ -20,10 +20,6 @@ public class Main {
         System.out.println("Twoj numer rachunku to " + nrKonta + " i obecny stan konta to " + stanKonta + " PLN");
 
 
-        Waluta walutaPln = Waluta.PLN;
-
-
-
         System.out.println("Podaj w jakiej walucie chcesz dokonać wpłaty? Podaj jeden z przykładów: PLN, EUR, USD"  );
         String moneta = scanner.nextLine();
 
@@ -31,7 +27,7 @@ public class Main {
 
         // WPŁATA PIENIĘDZY
 
-        if ( walutaPln == Waluta.valueOf(moneta)){
+        if ( Waluta.PLN == Waluta.valueOf(moneta)){
             System.out.println("Podaj ile chcesz wpłacić środków?");
             double kwota = scanner.nextDouble();
             konto.setWplacSrodki(kwota);
@@ -74,8 +70,6 @@ public class Main {
             double wyplata = scanner.nextDouble();
             konto.setWyplacSrodkiEur(wyplata);
         }
-
-
 
 
         System.out.println(konto);
