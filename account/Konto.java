@@ -13,7 +13,7 @@ public class Konto {
     private double stanKontaUsd;
     private double stanKontaEur;
 
-    public Konto(String numerRachunku, double stanKonta, Klient posiadacz, int nrDomu, Waluta waluta, double stanKontaUSD, double stanKontaEUR) {
+    public Konto(String numerRachunku, double stanKonta, Klient posiadacz, int nrDomu, Waluta waluta, double stanKontaUsd, double stanKontaEur) {
         this.numerRachunku = numerRachunku;
         this.stanKonta = stanKonta;
         this.posiadacz = posiadacz;
@@ -44,6 +44,17 @@ public class Konto {
 
     public void setWyplacSrodki(double kwota) {
 
+        this.stanKonta = stanKonta- kwota;
+
+        if ( kwota > stanKonta){
+            System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
+        } else {
+            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKonta + " " + Waluta.PLN);
+        }
+    }
+
+    public void setWyplacSrodkiUsd(double kwota) {
+
         this.stanKontaUsd = stanKontaUsd - kwota;
 
         if ( kwota > stanKontaUsd){
@@ -53,17 +64,16 @@ public class Konto {
         }
     }
 
-    public void setWyplacSrodkiUsd(double kwota) {
+    public void setWyplacSrodkiEur(double kwota) {
 
-        this.stanKonta = stanKonta - kwota;
+        this.stanKontaEur = stanKontaEur - kwota;
 
-        if ( kwota > stanKonta){
+        if ( kwota > stanKontaEur){
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
-            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKonta + " " + Waluta.PLN);
+            System.out.println(" Twój obecny stan konta po wypłacie to " + stanKontaEur + " " + Waluta.EUR);
         }
     }
-
     public String getNumerRachunku() {
         return numerRachunku;
     }
