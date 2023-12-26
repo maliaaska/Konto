@@ -18,7 +18,7 @@ public class Adres {
     }
 
     public void setUlica(String ulica) {
-        this.ulica = ulica;
+        this.ulica.equals(ulica)  ; //użycie metody equals
     }
 
     public String getKod() {
@@ -26,7 +26,7 @@ public class Adres {
     }
 
     public void setKod(String kod) {
-        this.kod = kod;
+        this.kod.equals(kod);   //użycie metody equals
     }
 
     public String getMiejscowosc() {

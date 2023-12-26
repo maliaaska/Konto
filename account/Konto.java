@@ -24,29 +24,42 @@ public class Konto {
 
     }
 
+    public boolean equals (Object o) {
+        if (this == o ) {
+            return true;
+        }
+        if ( o == null || this.getClass() != o.getClass()) {
+            return false
+        }
+
+    }
     // Metody
     public double getAccountBalance() {
-          return stanKonta;
+        return stanKonta;
     }
-    public double getAccountBalanceUsd() { return stanKontaUsd;}
+
+    public double getAccountBalanceUsd() {
+        return stanKontaUsd;
+    }
+
     public void setWplacSrodki(double kwota) {
 
         this.stanKonta = stanKonta + kwota;
     }
 
-    public void setWplacSrodkiUsd ( double kwota ) {
+    public void setWplacSrodkiUsd(double kwota) {
         this.stanKontaUsd = stanKontaUsd + kwota;
     }
 
-    public void setWplacSrodkiEur ( double kwota ) {
+    public void setWplacSrodkiEur(double kwota) {
         this.stanKontaEur = stanKontaEur + kwota;
     }
 
     public void setWyplacSrodki(double kwota) {
 
-        this.stanKonta = stanKonta- kwota;
+        this.stanKonta = stanKonta - kwota;
 
-        if ( kwota > stanKonta){
+        if (kwota > stanKonta) {
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
             System.out.println(" Twój obecny stan konta po wypłacie to " + stanKonta + " " + Waluta.PLN);
@@ -57,7 +70,7 @@ public class Konto {
 
         this.stanKontaUsd = stanKontaUsd - kwota;
 
-        if ( kwota > stanKontaUsd){
+        if (kwota > stanKontaUsd) {
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
             System.out.println(" Twój obecny stan konta po wypłacie to " + stanKontaUsd + " " + Waluta.USD);
@@ -68,12 +81,13 @@ public class Konto {
 
         this.stanKontaEur = stanKontaEur - kwota;
 
-        if ( kwota > stanKontaEur){
+        if (kwota > stanKontaEur) {
             System.out.println("Nie masz wystarczających środków na koncie. Prosimy spróbować póżniej");
         } else {
             System.out.println(" Twój obecny stan konta po wypłacie to " + stanKontaEur + " " + Waluta.EUR);
         }
     }
+
     public String getNumerRachunku() {
         return numerRachunku;
     }
@@ -99,8 +113,8 @@ public class Konto {
     }
 
     public void setPosiadacz(Klient posiadacz) {
-        this.posiadacz = posiadacz;
-    }
+        this.posiadacz.equals(posiadacz);
+    }  //użycie metody equals
 
     public int getNrDomu() {
         return nrDomu;

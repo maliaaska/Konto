@@ -2,8 +2,6 @@ package com.milewskiarkadiuszmodul8.account;
 
 import java.util.Scanner;
 
-import static java.lang.System.err;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -24,10 +22,13 @@ public class Main {
         String moneta = scanner.nextLine();
 
 
-
         // WPŁATA PIENIĘDZY
-
-        if ( Waluta.PLN == Waluta.valueOf(moneta)){
+        if (moneta.isEmpty() || Waluta.valueOf(moneta) != Waluta.PLN) {
+            System.out.println("Ile chciałbyś wpłacic złotowek");
+            double kwota = scanner.nextDouble();
+            konto.setWplacSrodki(kwota);
+            System.out.println("Twoje Środki po wpłaceniu to: " + konto.getAccountBalance() + " " + moneta);
+        } else if ( Waluta.PLN.equals(Waluta.valueOf(moneta))){  // Użycie metody equals do porównania.
             System.out.println("Podaj ile chcesz wpłacić środków?");
             double kwota = scanner.nextDouble();
             konto.setWplacSrodki(kwota);
@@ -46,31 +47,31 @@ public class Main {
             System.out.println("Twoje Środki po wpłaceniu to: " + konto.getStanKontaEur() + " " + moneta);
 
         }
-        else {
-            System.out.println("Niestety nie posiadasz konta o takiej walucie. Przyjdź do placówki aby utworzyć takie konto. Teraz możesz wpłacić pieniądze w PLN");
-        }
+
 
 
         //WYPŁATA PIENIEDZY W ZALEZNOSCI OD WYBRANEJ WALUTY
+        if ( moneta.isEmpty() || Waluta.valueOf(moneta) != Waluta.PLN) {
+            System.out.println("Powiedz ile chcesz wyplacic złotówek");
+            double wyplata = scanner.nextDouble();
+            konto.setWyplacSrodki(wyplata);;
 
-
-        if (Waluta.valueOf(moneta) == Waluta.PLN) {
+        } else if (Waluta.valueOf(moneta) == Waluta.PLN) {
             System.out.println("Napisz ile chciałbyś wypłacić pieniędzy.");
             double wyplata = scanner.nextDouble();
             konto.setWyplacSrodki(wyplata);
         }
         //Wyplata dolarow
-        else if(Waluta.valueOf(moneta) == Waluta.USD) {
+        else if (Waluta.valueOf(moneta) == Waluta.USD) {
             System.out.println("Napisz ile chciałbyś wypłacić pieniędzy.");
             double wyplata = scanner.nextDouble();
             konto.setWyplacSrodkiUsd(wyplata);
-        } else {
+        } else if (Waluta.valueOf(moneta) == Waluta.EUR){
             //Wypłata EURO
             System.out.println("Napisz ile chciałbyś wypłacić pieniędzy.");
             double wyplata = scanner.nextDouble();
             konto.setWyplacSrodkiEur(wyplata);
         }
-
 
         System.out.println(konto);
     }

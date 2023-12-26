@@ -4,7 +4,7 @@ public class Klient {
 
 
     private String imie;
-    private String nazwisko ;
+    private String nazwisko;
     private int rokUrodzienia;
     private String email;
     private String telefon;
@@ -21,7 +21,7 @@ public class Klient {
 
     }
 
-    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, String ulica, String kod, String miejscowosc, int nrDomu , Waluta pln) {
+    public Klient(String imie, String nazwisko, int rokUrodzienia, String email, String telefon, String ulica, String kod, String miejscowosc, int nrDomu, Waluta pln) {
 
         this.imie = imie;
         this.nazwisko = nazwisko;
@@ -38,7 +38,7 @@ public class Klient {
     }
 
     public void setImie(String imie) {
-        this.imie = imie;
+        this.imie.equals(imie);  //uzycie metody equals
     }
 
     public String getNazwisko() {
@@ -46,7 +46,7 @@ public class Klient {
     }
 
     public void setNazwisko(String nazwisko) {
-        this.nazwisko = nazwisko;
+        this.nazwisko.equals(nazwisko);  //uzycie metody equals
     }
 
     public int getRokUrodzienia() {
