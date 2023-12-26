@@ -23,7 +23,7 @@ public class Main {
 
 
         // WPŁATA PIENIĘDZY
-        if (moneta.isEmpty() || Waluta.valueOf(moneta) != Waluta.PLN) {
+        if (moneta.isEmpty() || Waluta.valueOf(moneta) != (Waluta.PLN) ) {
             System.out.println("Ile chciałbyś wpłacic złotowek");
             double kwota = scanner.nextDouble();
             konto.setWplacSrodki(kwota);
