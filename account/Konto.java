@@ -27,15 +27,6 @@ public class Konto {
     }
 
 
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || this.getClass() != o.getClass()) {
-        }
-        return true;
-    }
-
     // Metody
     public double getAccountBalance() {
         return stanKonta;
@@ -149,6 +140,19 @@ public class Konto {
 
     public void setStanKontaEur(double stanKontaEur) {
         this.stanKontaEur = stanKontaEur;
+    }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        return true;
     }
 
     @Override
